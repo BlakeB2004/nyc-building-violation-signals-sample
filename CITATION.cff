@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below and credit the City of New York as the source of the underlying public data."
+type: dataset
+title: "NYC Building Violation Signals: 14-record sample"
+abstract: "Fourteen anonymized, building-level NYC Housing Maintenance Code violation records (roof, fire-protection, pest/vermin) from a 2026-10-21 snapshot of NYC Open Data, with normalized event types, a service-category label and a one-sentence inference added by the publisher. No personal data."
+authors:
+  - name: "Hammerline Growth"
+version: "1.0.0"
+date-released: "2026-10-28"
+license: CC-BY-4.0
+url: "https://hammerlinegrowth.com/methodology"
+keywords:
+  - open data
+  - NYC Open Data
+  - building violations
+  - housing maintenance code
+  - public records
+references:
+  - type: dataset
+    title: "Housing Maintenance Code Violations"
+    authors:
+      - name: "NYC Department of Housing Preservation and Development (HPD)"
+    url: "https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations/wvxf-dwi5"
+    notes: "Accessed via NYC Open Data; snapshot taken 2026-10-21. Building attributes from NYC Department of City Planning PLUTO."

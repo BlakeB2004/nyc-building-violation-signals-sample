@@ -1,0 +1,21 @@
+FIELD,DESCRIPTION,TYPE,EXAMPLE,SOURCE / DERIVATION,NULLABLE?,PII?
+sample_id,Unique identifier of the sample record within this file (not a public-record number).,string,OI-NYC-01,Assigned by Hammerline when the sample is built,No,NO
+market,OI market key for the record's metropolitan area.,string,new-york,"Hammerline market taxonomy, derived from the record's borough/city",No,NO
+borough_or_city,NYC borough (or city) where the cited building is located. No street address is included.,string,Bronx,NYC HPD violations dataset (borough field),No,NO
+state,US state abbreviation.,string,NY,Derived from the borough/city,No,NO
+zip_code,"5-digit ZIP code of the cited building. Building-level, no street address or unit.",string,10472,NYC HPD violations dataset (zip field),No,NO
+service_category,Commercial service category the record may be relevant to.,string,Commercial roofing,"Hammerline classification of the violation type (roof, fire-protection, pest)",No,NO
+public_record_event_type,Type of public-record event: an open violation of the housing maintenance code or building code.,string,Open roof-condition violation (HMC),Hammerline normalization of the HPD violation category,No,NO
+cited_condition,Plain-language summary of the cited condition. Apartment-specific wording is removed.,string,Roof condition violation (leak or defective roof),Summarized by Hammerline from the HPD violation description,No,NO
+open_citation_count,Number of open citations of this type at the building at the snapshot date.,integer,3,Count of open HPD violations of that category for the building at snapshot,No,NO
+latest_citation_date,"Most recent citation (inspection) date among the open citations, ISO 8601.",date,2026-10-20,NYC HPD violations dataset (inspection / issue date),No,NO
+freshness_at_snapshot,Hammerline freshness label at the snapshot date: NEW = cited within about 3 days; CURRENT = older but still inside OI's current window (aging records are flagged separately and not included here).,string,NEW,Derived by Hammerline from latest_citation_date and snapshot_date,No,NO
+building_type,Building description from city property records.,string,Walk-up apartment building,"NYC DCP PLUTO building class, normalized by Hammerline",Yes,NO
+residential_units,Number of residential units in the building.,integer,26,NYC DCP PLUTO (unitsres),Yes,NO
+floors,Number of floors.,integer,5,NYC DCP PLUTO (numfloors),Yes,NO
+year_built,Year the building was built.,integer,1916,NYC DCP PLUTO (yearbuilt),Yes,NO
+source_agency,"Agency that publishes the underlying public record, with the agency supplying building attributes.",string,NYC Dept. of Housing Preservation & Development (HPD); building attributes from NYC Dept. of City Planning PLUTO,Static per source,No,NO
+source_dataset,Name of the public dataset the violation comes from.,string,HPD Housing Maintenance Code Violations,NYC Open Data,No,NO
+source_reference_url,Dataset-level reference page on NYC Open Data (not a record-level link).,url,https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Violations/wvxf-dwi5,NYC Open Data portal,No,NO
+commercial_relevance,"One-sentence inference by Hammerline on why a service provider may care. It is an inference, not a statement that the owner wants or will buy a service.",string,"The owner must cure the cited roof condition; a roofing contractor may be needed for inspection, repair or replacement.",Hammerline research write-up (OUR INFERENCE section),No,NO
+snapshot_date,Date the record snapshot was taken. Citations may have been cured since.,date,2026-10-21,Hammerline snapshot date,No,NO
